@@ -88,12 +88,6 @@ Usage
 - You can pin MilkStream to your homescreen for easier access.
 
 
-Screenshots
------------
-![Screenshot](https://raw.githubusercontent.com/deuteronx/milkstream/screenshots/library.png "Library")
-![Screenshot](https://raw.githubusercontent.com/deuteronx/milkstream/screenshots/browse.png "Browse")
-![Screenshot](https://raw.githubusercontent.com/deuteronx/milkstream/screenshots/search.png "Search")
-
 Notes
 -----
 This project was quickly written with the purpose of private use. Due to the technical limitation of MilkVR, the files you added to `milkstream\media` will be accessible by anyone who both *is in the same network with your server* and *knows the url of that file*.
