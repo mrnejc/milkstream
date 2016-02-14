@@ -88,8 +88,8 @@ Usage
 - You can pin MilkStream to your homescreen for easier access.
 
 
-Notes
------
+Note
+----
 This project was quickly written with the purpose of private use. Due to the technical limitation of MilkVR, the files you added to `milkstream\media` will be accessible by anyone who both *is in the same network with your server* and *knows the url of that file*.
 
 My current advice is to only use MilkStream on private network. It also does not handle any error caused by abnormal use cases. If you want a bit better security, you can try turning off php error reporting and directory listing function in Apache.
