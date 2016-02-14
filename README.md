@@ -94,3 +94,7 @@ This project was quickly written with the purpose of private use. Due to the tec
 
 My current advice is to only use MilkStream on private network. It also does not handle any error caused by abnormal use cases. If you want a bit better security, you can try turning off php error reporting and directory listing function in Apache.
 
+Screenshot
+----------
+![Screenshot](http://i.imgur.com/lUcMVz6.png "MilkStream")
+
