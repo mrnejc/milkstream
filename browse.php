@@ -5,7 +5,7 @@
 
 <?php
 // remove dangerous character
-$dirname = str_replace(array('.', '/', '\\'), '', $_GET['dir']);
+$dirname = clean_path($_GET['dir']);
 $filelist = browse($dirname);
 $filelist_count = count($filelist);
 ?>
@@ -24,9 +24,20 @@ $filelist_count = count($filelist);
 		<?php
 			if ($filelist_count > 0) {
 				foreach ($filelist as $filename) {
-					$title = get_title($filename);
 					echo "<tr>";
-					echo "<td>$title</td>";
+					echo "<td>";
+					
+					$title = get_meta($filename)['title'];
+					
+					// look for label
+					$label_pos = strpos($title, " - ");
+					if ($label_pos !== false) {
+						$label = substr($title, 0, $label_pos);
+						$title = substr($title, $label_pos + 3);
+						echo "<span class=\"label label-default\">$label</span>&nbsp";
+					}
+					
+					echo "$title</td>";
 					echo "<td>";
 					require 'action_file.php';
 					echo "</td>";

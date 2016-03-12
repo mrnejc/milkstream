@@ -7,7 +7,7 @@
 <h3>MilkStream for MilkVR</h3>
 <p>&nbsp;</p>
 <h5>Version</h5>
-<p>0.5 - 20160212</p>
+<p>0.6 - 20160312</p>
 <p>&nbsp;</p>
 <h5>Developer</h5>
 <p>deuteronx</p>
