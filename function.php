@@ -11,17 +11,30 @@ function get_meta($filename) {
 
 function browse ($dirname='') {
 	$media_dir = get_media_dir();
-	$itemlist = scandir(join('/', array($media_dir, $dirname)));
+	$path = $dirname?join('/', array($media_dir, $dirname)):$media_dir;
 
-	// remove . and ..
-	unset($itemlist[0]);
-	unset($itemlist[1]);
-	
+	$itemlist = scandir($path);
+
+	// filter the result
+	$keepdirs = strcmp($media_dir, $path) === 0;
+	$max = count($itemlist);
+	for($i=0; $i<$max; $i++) {
+		// remove *UX dot aka "hidden files"; will also remove . and ..
+		if(strpos($itemlist[$i], '.') === 0) {
+			unset($itemlist[$i]);
+			continue;
+		}
+
+		// don't want files in root && don't want dirs in media dirs
+		if(!is_file(join('/', array($path, $itemlist[$i]))) xor $keepdirs)
+			unset($itemlist[$i]);
+        }
+
 	return $itemlist;
 }
 
 function get_media_dir() {
-	return dirname(__FILE__) . '\media';
+	return dirname(__FILE__) . '/media';
 }
 
 function get_http_query($data) {
